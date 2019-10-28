@@ -1,0 +1,3 @@
+[submodule "game-theory--matrix-game"]
+	path = game-theory--matrix-game
+	url = https://github.com/CheenaT/game-theory--matrix-game
