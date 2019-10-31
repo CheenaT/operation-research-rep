@@ -23,12 +23,22 @@ git checkout -b task2-ivanovpetrov
 ```sh
 mkdir submissions/task2/ivanov-petrov
 ```
-4. Отправить pull request в master с именем **Задание 2. Иванов, Петров**:
+
+4. Написать код и сделать коммит:
+
+![](https://media.giphy.com/media/zOvBKUUEERdNm/giphy.gif)
+
+```sh
+git add .
+git commit -m "Final commit!"
+```
+
+5. Отправить pull request в master с именем **Задание 2. Иванов, Петров**:
 
 ```sh
 git push origin task2-ivanovpetrov (task2-ivanovpetrov - название вашей ветки)
 ```
 
-5. Молиться, что всё сработает ~~fucking awesome~~ как надо:
+6. Молиться, что всё сработает ~~fucking awesome~~ как надо:
 
 ![](https://im0-tub-ru.yandex.net/i?id=5b15e87f69a304493e1440fbb557f676&n=13&exp=1)
