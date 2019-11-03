@@ -1,14 +1,10 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[52]:
 
 import numpy as np
-import matplotlib.pyplot as plt 
+
 eps = 0.000001
 np.set_printoptions(precision=3)
 np.set_printoptions(suppress=True)
-# In[27]:
+
 
 
 def nash_equilibrium(arr):
@@ -33,9 +29,6 @@ def nash_equilibrium(arr):
             jpivot = check_z(zmax)
         getres(zmax, base, simplex_table, p, q)
         return p, q, 1/zmax[0]
-
-
-# In[8]:
 
 
 def clean_str(a):
@@ -71,9 +64,6 @@ def clean_str(a):
     return -1, -1
 
 
-# In[9]:
-
-
 def simplex_matrix(arr):   
     init_simplex_table = np.empty((len(arr), len(arr[0]) + len(arr) + 1), dtype = float)
     base = np.empty(len(arr[0]) + len(arr), dtype=int)
@@ -101,9 +91,6 @@ def simplex_matrix(arr):
     return init_simplex_table, base, zmax
 
 
-# In[10]:
-
-
 def check_z(zmax):
     max = 0
     max_j = -1
@@ -117,9 +104,6 @@ def check_z(zmax):
     if g:
         return max_j
     return -1
-
-
-# In[11]:
 
 
 def get_pivot(arr, c):
@@ -137,16 +121,10 @@ def get_pivot(arr, c):
     return row
 
 
-# In[12]:
-
-
 def change_base(base,ipivot,jpivot):
     base[base == ipivot] =- 1
     base[jpivot - 1] = ipivot
     return base   
-
-
-# In[13]:
 
 
 def change_table(simplex_table, zmax, base, ipivot, jpivot):
@@ -163,9 +141,6 @@ def change_table(simplex_table, zmax, base, ipivot, jpivot):
     return 0            
 
 
-# In[48]:
-
-
 def getres(zmax, base, arr, p, q):
 	for i in range(0, len(p)):
 		p[i] = zmax[i + len(q) + 1]/zmax[0]
@@ -173,36 +148,6 @@ def getres(zmax, base, arr, p, q):
 		q[i] = 0 if base[i] == -1 else arr[base[i], 0]/zmax[0]
 
 
-# In[51]:
-
-
-def print_res(p,q):
-    x1 = np.linspace(1, len(p), len(p)) 
-    # x2 = np.linspace(1, len(q), len(q)) 
-    # plt.figure(figsize=(10,10))
-    # plt.subplot(2,1,1)
-    plt.stem(x1, p, use_line_collection=True)
-    plt.subplot(2,1,2)
-    plt.stem(x2, q, use_line_collection=True)
-
-
-# In[ ]:
-
-
-
-
-#get_ipython().run_line_magic('matplotlib', 'inline')
-'''arr = np.array([
-    [4,4],
-    [-1,4]
-])
-
-arr = np.array([ #матрица с чистыми стратегиями
-    [3,9,2,1],
-    [7,8,5,6],    
-    [4,7,3,5],
-    [5,6,1,7]
-])'''
 arr = np.array([
 	    [4,0,6,2,2,1],
 	    [3,8,4,10,4,4],
@@ -212,31 +157,11 @@ arr = np.array([
 	    [10,7,0,7,9,8]
 	])
 
-'''arr = np.array([
-		[4, 10, 1],
-		[7, 3, 2],
-		[0, 1, 1],
-		])'''
-'''arr = np.array([
-        [4,1,6],
-        [3,8,4],
-        [3,8,1],
-        [3,8,0],
-        [3,8,2]
-    ])'''
-'''arr = np.array([
-    [4,1,6],
-    [3,8,4],
-    [3,8,1],
-    [3,8,0],
-    [3,8,2]
-])'''
 def main():
 	p, q, value = nash_equilibrium(arr)
 	print('value:', value)
 	print('p:', p)
 	print('q:', q)
-	print_res(p,q)
 
 if __name__ == '__main__':
 	main()

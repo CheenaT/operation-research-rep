@@ -1,18 +1,7 @@
 import numpy as np
-#from scipy.optimize import linprog
 import prak
 from nose.tools import assert_equals
 eps = 0.000001
-# def nash_equilibrium(a):
-#     c = [-1 for i in range(0,a.shape[1])]
-#     b = [1 for i in range(0,a.shape[0])]
-#     q = linprog(c, a, b).x
-#     p = linprog(b, -a.transpose(),c).x
-#     opt_sum = 0
-#     for i in p:
-#         opt_sum+=i
-#     cost = 1/opt_sum
-#     return (cost, p*cost, q*cost)
 
 def test1():    #матрица с чистыми стратегиями
 	m1 = np.array([
