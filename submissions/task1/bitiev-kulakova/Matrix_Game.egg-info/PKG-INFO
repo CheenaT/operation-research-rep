@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: Matrix-Game
+Version: 1.0
+Summary: Solution of the matrix game by the simplex method
+Home-page: UNKNOWN
+Author: A. Bitiev, M.Kulakova
+Author-email: UNKNOWN
+License: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Framework :: Django

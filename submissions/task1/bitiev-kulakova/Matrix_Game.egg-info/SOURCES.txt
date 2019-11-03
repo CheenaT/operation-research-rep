@@ -1,0 +1,8 @@
+setup.py
+Matrix_Game.egg-info/PKG-INFO
+Matrix_Game.egg-info/SOURCES.txt
+Matrix_Game.egg-info/dependency_links.txt
+Matrix_Game.egg-info/top_level.txt
+matrixgame/__init__.py
+matrixgame/matrix_game.py
+matrixgame/test_game.py
