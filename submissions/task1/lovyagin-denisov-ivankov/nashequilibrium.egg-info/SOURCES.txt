@@ -1,0 +1,9 @@
+setup.py
+matrgame/__init__.py
+matrgame/game.py
+matrgame/test_game.py
+nashequilibrium.egg-info/PKG-INFO
+nashequilibrium.egg-info/SOURCES.txt
+nashequilibrium.egg-info/dependency_links.txt
+nashequilibrium.egg-info/requires.txt
+nashequilibrium.egg-info/top_level.txt
