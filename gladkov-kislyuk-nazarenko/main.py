@@ -1,11 +1,10 @@
 from nash import *
 
+
 help='/print -- для вывода текущей занесенной матрицы\n/enter -- для начала ввода матрицы\n/random -- для автосоздания и заполнения матрицы\n/test -- для тестирования\n/result -- для вычисления результата\n/graph -- для построения графика стратегий\n/help -- для вывода списка команд\n/exit -- для завершения программы'
 print("print /help for getting help")
 matr = []
-a=0
-B=[]
-price=0
+
 
 while(1):
     s=str(input(">>> "))
@@ -17,6 +16,7 @@ while(1):
             continue
         else:
             print_matrix(matr)
+            print(matr)
     elif (s=='/enter'):
         print("Введите через пробел размеры матрицы")
         n,m=[int(i) for i in input().split()]
@@ -25,14 +25,23 @@ while(1):
         print_matrix(matr)
     elif (s=="/random"):
         a,b = eval(input('Введите колличество ст0лбцов и строк(через запятую): '))
-        matr = np.random.randint(0,15,size=(a,b))
+        matr = np.random.randint(-5,15,size=(a,b))
         print_matrix(matr)
     elif (s=='/result'):
         if (matr == []):
             print('Enter matrix first')
             continue
         else:
-            nash_equilibrium(matr)
+            res= nash_equilibrium(matr,0)
+            print(res)
+            print("Цена игры -- ",res[0])
+            print("Оптимальная стратегия первого игрока", res[1])
+            print("Оптимальная стратегия второго игрока", res[2])
+    elif (s=='/graph'):
+        if (matr == []):
+            print('Enter matrix first')
+            continue
+        res= nash_equilibrium(matr,1)
     elif (s=="/exit"):
         print("Ending! Bye")
         break
