@@ -49,7 +49,7 @@ def simplex_find(i, j, A):
     
     d = np.where(c == np.amin(c))[0] #массив индексов мин.элементов отношения
     if abs(c[d[0]]) == np.inf:
-        raise Exception("Всё очень плохо")
+        raise Exception("Пространство допустимых решений неограниченно. Решения не существует.")
     lead_line = d[0]+1 #индекс ведущей строки: +1 тк нумерация свободных переменных с 1
 ##    print("Ведущая строка: X" , int(A[lead_line, 0]) )
     
@@ -98,7 +98,7 @@ def optimality_criterion(i, j, A):
 
 
 
-def nash_equilibrium(A):
+def nash_equilibrium(A,gr):
 
     a, b = (np.shape(A)) #размер матрицы: кол-во строк, кол-во столбцов 
 
@@ -117,34 +117,31 @@ def nash_equilibrium(A):
             solution_to_primal[int(B[n+1,0])-1] = B[n+1,1]
     for n in range(b): #выписываем решение двойственной задачи
         if a+b >= B[0,n+2] > b:
-            solution_to_dual[int(B[0,n+2])-a-1] = B[a+1,n+2]
+            solution_to_dual[int(B[0,n+2])-b-1] = B[a+1,n+2]
 
     price = 1/np.sum(solution_to_primal) #цена игры
+    strategy1=price*solution_to_dual
+    strategy2=price*solution_to_primal
 
-    print("Значение игры:", price)
-    print("Оптимальная стратегия первого игрока:", price*solution_to_dual)
-    print("Оптимальная стратегия второго игрока:", price*solution_to_primal)
+    #print("Значение игры:", price)
+    #print("Оптимальная стратегия первого игрока:", strategy1)
+    #print("Оптимальная стратегия второго игрока:", strategy2)
     
-    x = np.arange(1, a+1)
-    y = price*solution_to_dual
-    fig, ax = plt.subplots()
+    if (gr):
+        x = np.arange(1, a+1)
+        y = price*solution_to_dual
+        fig, ax = plt.subplots()
 
-    ax.scatter(x, y)
+        ax.scatter(x, y)
 
-    plt.show()
+        plt.show()
     
-    x = np.arange(1, b+1)
-    y = price*solution_to_primal
-    fig, ax = plt.subplots()
+        x = np.arange(1, b+1)
+        y = price*solution_to_primal
+        fig, ax = plt.subplots()
 
-    ax.scatter(x, y)
+        ax.scatter(x, y)
 
-    plt.show()
+        plt.show()
 
-
-
-
-
-
-
-
+    return price, strategy1, strategy2
