@@ -1,0 +1,17 @@
+.DS_Store
+MANIFEST.in
+README.tex
+setup.cfg
+setup.py
+dist/game_theory_utils-0.33.6-py2.py3-none-any.whl
+game_theory_utils/.DS_Store
+game_theory_utils/__init__.py
+game_theory_utils/module1.py
+game_theory_utils/unit test.py
+game_theory_utils.egg-info/PKG-INFO
+game_theory_utils.egg-info/SOURCES.txt
+game_theory_utils.egg-info/dependency_links.txt
+game_theory_utils.egg-info/entry_points.txt
+game_theory_utils.egg-info/not-zip-safe
+game_theory_utils.egg-info/requires.txt
+game_theory_utils.egg-info/top_level.txt
