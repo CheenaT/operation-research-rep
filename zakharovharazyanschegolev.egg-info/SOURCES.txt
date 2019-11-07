@@ -1,8 +1,0 @@
-README
-setup.py
-prog/__init__.py
-zakharovharazyanschegolev.egg-info/PKG-INFO
-zakharovharazyanschegolev.egg-info/SOURCES.txt
-zakharovharazyanschegolev.egg-info/dependency_links.txt
-zakharovharazyanschegolev.egg-info/not-zip-safe
-zakharovharazyanschegolev.egg-info/top_level.txt
