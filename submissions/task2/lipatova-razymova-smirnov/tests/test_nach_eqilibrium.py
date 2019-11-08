@@ -31,7 +31,7 @@ from nash_equilibrium.simplex_method import nash_equilibrium
         ]),
         np.array([Fraction(0, 1), Fraction(0, 1), Fraction(2, 3), Fraction(1, 3)]),
         np.array([Fraction(0, 1), Fraction(1, 3), Fraction(1, 3), Fraction(1, 3)]),
-        Fraction(7, 13),
+        Fraction(7, 3),
         False
     ),
     (
@@ -54,7 +54,7 @@ from nash_equilibrium.simplex_method import nash_equilibrium
         ]),
         np.array([Fraction(11, 17), Fraction(5, 34), Fraction(7, 34)]),
         np.array([Fraction(6, 17), Fraction(25, 68), Fraction(19, 68)]),
-        Fraction(151, 34),
+        Fraction(115, 34),
         False
     ),
     (
@@ -66,7 +66,7 @@ from nash_equilibrium.simplex_method import nash_equilibrium
         np.array([Fraction(1, 1), Fraction(0, 1), Fraction(0, 1)]),
         np.array([Fraction(0, 1), Fraction(0, 1), Fraction(1, 1)]),
         Fraction(3, 1),
-        False
+        True
     ),
     (
         np.array([
@@ -128,7 +128,7 @@ from nash_equilibrium.simplex_method import nash_equilibrium
 ])
 def test_nash_test_equilibrium(matrix, p_ans, q_ans, price_ans, flag_ans):
     p_res, q_res, price_res, flag_res = nash_equilibrium(matrix)
-    assert (p_res == p_ans).all()
-    assert (q_res == q_ans).all()
+    assert (p_res == q_ans).all()
+    assert (q_res == p_ans).all()
     assert price_res == price_ans
     assert flag_res == flag_ans
