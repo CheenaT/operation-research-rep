@@ -212,6 +212,19 @@ def nash_equilibrium(mtr):
     spectre_vizual(q)                                # Визуализация q
     return p, q, price
 
+# main
+def main():
+    mtr_game_str = input("Enter your matrix game:\n")
+    mtr_game_str = mtr_game_str.replace("],[","; ")
+    mtr_game_str = mtr_game_str.replace(","," ")
+    mtr_game_str = mtr_game_str.replace("[[","")
+    mtr_game_str = mtr_game_str.replace("]]","")
+    mtr = np.matrix(mtr_game_str)
+    p, q, v = nash_equilibrium(mtr)
+
+main()
+
+
 # Настройки, чтобы вывод был аккуратным
 np.set_printoptions(precision=6,
                     suppress=True,

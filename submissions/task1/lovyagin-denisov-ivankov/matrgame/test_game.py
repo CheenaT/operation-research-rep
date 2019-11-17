@@ -94,3 +94,16 @@ def test_game_not_square_not_saddle2():
 		assert frc(p1[k]).limit_denominator(1000) == frc(p[k]).limit_denominator(1000)
 	assert frc(p1[2]).limit_denominator(1000) == frc(p[2]).limit_denominator(1000)
 	assert frc(price1).limit_denominator(1000) == frc(price).limit_denominator(1000)
+...
+if __name__ == "__main__":
+	test_game_internet()
+	test_game_task()
+	test_game_fake()
+	test_game_saddle()
+	test_game_saddle2()
+	test_game_not_square_saddle()
+	test_game_not_square_not_saddle()
+	test_game_not_square_not_saddle2()
+
+
+
