@@ -1,0 +1,9 @@
+nashpy.egg-info
+*pyc
+.eggs
+.coverage
+dist/
+.hypothesis/
+docs/_build/
+*mypy*
+.wily/
