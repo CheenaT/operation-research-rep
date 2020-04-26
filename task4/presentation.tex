@@ -1,0 +1,143 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[russian]{babel}
+
+\usetheme{Antibes}
+\usecolortheme{dolphin}
+
+\usepackage{booktabs}
+\usepackage{gensymb}
+
+\title{Практикум на ЭВМ\\ Мечи залива работорговцев}
+
+\author{Чистяков Иван \\ Раева Анастасия \\ Боданова Елена}
+
+\institute{МГУ ВМК \\ Исследование Операций}
+
+\date{2020 г.}
+
+\begin{document}
+
+    \begin{frame}
+        \maketitle
+    \end{frame}
+    
+    \begin{frame}{Постановка задачи}
+        Два основных поставщика стали -- это WesterosInc и Harpy \& Co. 
+        При заключении эксклюзивного договора на поставку каждая компания предлагает хорошую скидку.\\
+        Неоходимо принять взвешенное рациональное решение вопроса о том, с какой из компаний следует заключить эксклюзивный договор на поставку стали.
+        
+    \end{frame}
+    \begin{frame}{Исходные данные}
+        Есть записи о производстве мечей каждым из кузнецов-безупречных, а также данные о количестве сломанных мечей в каждый из месяцев ведения боевых действий.
+    \end{frame}
+    \begin{frame}{Цель работы}
+        Провести разведочный анализ данных и определить с кем выгоднее заключить договор.\\
+        Разведочный анализ данных -- анализ основных свойств данных, нахождение в них общих закономерностей, распределений и аномалий, построение начальных моделей, зачастую с использованием инструментов визуализации.
+        
+    \end{frame}
+    
+    \begin{frame}{Анализ}
+      Найденные метрики:
+        \begin{itemize}
+            \item Произведенные мечи 
+            \item Количество сломанных мечей 
+            \item Качество каждой поставки
+            \item Плотность поломок
+            \item Срок службы мечей
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{За все время}
+        \begin{figure}[H]
+             \centering
+             \begin{subfigure}
+                \includegraphics[width=5cm]{Presentation analysis/graph1.png}
+             \end{subfigure}
+            \begin{subfigure}
+                \includegraphics[width=5cm]{Presentation analysis/graph2.png}
+            \end{subfigure}
+        \end{figure}
+        \begin{table}[H]
+            \begin{right}
+                \begin{tabular}{|c|c|c|}
+                    \hline
+                    Поставщик & Произведено & Дефекты \\
+                    \hline
+                    Westeros Inc. & 31625 & 8268 \\
+                    \hline
+                    Harpy \& Co & 31523 & 6080 \\
+                    \hline
+                \end{tabular}
+            \end{right}
+            \\Произведено примерно одинаковое количество мечей, однако 
+            число поломок у Westeros Inc. значительно больше.
+        \end{table} 
+        
+        
+    \end{frame}
+    
+    \begin{frame}{Дефектов к произведенному}
+        \begin{figure}
+            \centering
+            \includegraphics[width=6cm]{Presentation analysis/graph3.png}
+        \end{figure}
+        Westeros.inc 0.26\\
+        Harpy.co 0.19\\
+        Наводит на мысль, что сталь Harpy\&co имеет качество лучше, чем Westeros inc.
+    \end{frame}
+    
+    \begin{frame}{Анализ по месяцам}
+        \begin{figure}
+            \centering
+            \includegraphics[width=8cm]{Presentation analysis/graph4.png}
+        \end{figure}
+        Видно, что поставки каждый месяц примерно одинаковые. Это дает
+        нам возможность использовать данные, чтобы получить достоверную информацию.
+    \end{frame}
+    
+    \begin{frame}{Анализ по месяцам}
+        \begin{figure}
+            \centering
+            \includegraphics[width=8cm]{Presentation analysis/graph5.png}
+        \end{figure}
+       Первые два месяца значения близки, но потом качество Harpy становится значительно лучше в сравнении с Westeros.
+    \end{frame}
+    
+    \begin{frame}{Качество партии}
+        \begin{figure}
+            \centering
+            \includegraphics[width=8cm]{Presentation analysis/graph6.png}
+        \end{figure}
+        Со временем качество обеих компаний становится выше, но Harpy очевидно лидирует.
+    \end{frame}
+    
+    \begin{frame}{Плотность поломок}
+        \begin{figure}
+            \centering
+            \includegraphics[width=8cm]{Presentation analysis/graph7.png}
+        \end{figure}
+        Качество стали Harpy улучшилось относительно начального значения. 
+        Мечи Westeros'a в среднем стали ломаться немного больше к шестому месяцу.
+    \end{frame}
+    
+    \begin{frame}{Срок службы мечей}
+        \begin{figure}
+            \centering
+            \includegraphics[width=8cm]{Presentation analysis/graph8.png}
+        \end{figure}
+        После первого месяца эксплуатации число поломок мечей Westeros'а почти в 5 раз превосходит Harpy.
+        Заметные изменения происходят после 4 месяца эксплуатации. Мечи из стали Harpy ломаются чаще.
+    \end{frame}
+    \begin{frame}{Подведение итогов}
+        Для сражений с запланированной длительностью меньше 4 месяцев отлично подходят мечи из стали Harpy \& Co. Их показатель поломок меньше почти в 5 раз. После наблюдается резкий скачок поломок, но при ежемесячных поставках это не является проблемой. 
+        
+    \end{frame}
+\begin{frame}{Вывод}
+      Качество мечей определяется качеством стали. Компания Harpy \& Сo лучше по показателям.
+      Опираясь на проведенный анализ, делаем вывод, что заключать договр следует с Harpy \& Co.
+        
+    \end{frame}
+
+\end{document}
