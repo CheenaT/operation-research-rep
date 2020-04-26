@@ -1,0 +1,125 @@
+\documentclass{beamer}
+\usepackage{xmpmulti}
+\usepackage[russian]{babel}
+\title{Отчет по заданию 4
+\newline
+Разведовательный анализ данных}
+\author{«МОСКОВСКИЙ ГОСУДАРСТВЕННЫЙ УНИВЕРСИТЕТ» ИМЕНИ М.В. ЛОМОНОСОВА}
+\date[]{Липатова Александра, Разумова Вера, Смирнов Михаил}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Постановка задачи}
+
+\begin{center}
+    \textbf{Необходимо провести разведывательный анализ данных с целью ответа на вопрос: "С каким из поставщиков стали следует заключить договор?". То есть задача сводится к транспортной задаче по поиску максимально выгодного поставщика.}
+\end{center}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{visual16.png}
+\label{fig:mpr}
+\end{figure}
+\end{frame}
+
+\begin {frame}{Основные понятия}
+
+\textbf{Разведочный анализ данных (англ. exploratory data analysis, EDA)} — анализ основных свойств данных, нахождение в них общих закономерностей, распределений и аномалий, построение начальных моделей, зачастую с использованием инструментов визуализации.
+\newline
+
+Понятие введено математиком Джоном Тьюки, который сформулировал цели такого анализа следующим образом:
+\newline
+\textf{• максимальное «проникновение» в данные}
+\newline
+\textf{• выявление основных структур}
+\newline
+\textf{• выбор наиболее важных переменных}
+\newline
+\textf{• обнаружение отклонений и аномалий}
+\newline
+\textf{• проверка основных гипотез}
+\newline
+\textf{• разработка начальных моделей.}
+\newline
+
+\end{frame}
+
+\begin{frame}{Ход работы}
+
+\textf{1. Получить данные из CSV таблицы.}
+\newline
+
+\textf{2. Провести анализ количества продукции, произведенного компаниями Harpy и Westeros каждый месяц.}
+\newline
+
+\textf{3. Для большей наглядности изобразим разницу количества дефектов на графике.}
+\newline
+
+\textf{4. Рассмотреть плотность распределения усредненных по месяцам дефектов к произведенному товару.}
+\newline
+
+\textf{5. Построим графики количества дефектов продукции компании для каждого месяца.}
+
+\end{frame}
+
+\begin{frame}{Описание программы}
+\textbf{1. Построим диаграмму количества продукции по месяцам.}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\linewidth]{visual10.png}
+\label{fig:mpr}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Описание программы}
+\textbf{2. Построим диаграмму количества дефектов по месяцам.}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.6\linewidth]{visual11.png}
+\label{fig:mpr}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Описание программы}
+\textbf{3. Построим график количества дефектов для более наглядной картины.}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{visual12.png}
+\label{fig:mpr}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Описание программы}
+\textbf{4. Построим диаграмму плотности распределения усредненных по месяцам дефектов к произведенному товару}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\linewidth]{visual13.png}
+\label{fig:mpr}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Описание программы}
+\textbf{5. Построим графики количества дефектов по всем месяцам.}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\linewidth]{visual15.png}
+\label{fig:mpr}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Выводы}
+\textf{ Видно, что при примерно одинаковом количестве произведенной продукции среднее количество дефектов компании Harpy ниже, чем компании Westeros. На основании проделанного анализа делаем вывод, что работать стоит с компанией Harpy.}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.4\linewidth]{visual19.png}
+\label{fig:mpr}
+\end{figure}
+\end{frame}
+
+
+
+\end{document}
